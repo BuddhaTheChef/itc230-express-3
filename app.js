@@ -33,6 +33,17 @@ collection.find({}, function(err, docs){
 });
 
 
+
+app.get('/collections/:name',function(req,res){
+  var collection = db.get(req.params.name);
+  collection.find({},{limit:20},function(e,docs){
+    res.json(docs);
+  })
+});
+
+
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
