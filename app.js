@@ -22,6 +22,17 @@ db.then(()=>{
 });
 
 
+const collection = db.get('test_collection');
+
+collection.find({}, function(err, docs){
+    if(err){
+      console.log(err);
+    }else{
+	console.log(docs);
+    }
+});
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
