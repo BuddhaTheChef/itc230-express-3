@@ -29,5 +29,13 @@ router.get('/view/:id', function(req, res, next) {
   });
 });
 
+//form to add user 
+router.get('/add', function(req, res, next) {
+  var title = "Add User";
+      res.render('users/add', {
+          title:title
+      });
+});
+
 
 module.exports = router;
