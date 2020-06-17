@@ -32,6 +32,12 @@ collection.find({}, function(err, docs){
     }
 });
 
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+var app = express();
+
+
 
 
 app.get('/collections/:name',function(req,res){
@@ -43,11 +49,6 @@ app.get('/collections/:name',function(req,res){
 
 
 
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
