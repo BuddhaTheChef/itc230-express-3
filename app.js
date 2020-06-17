@@ -32,11 +32,6 @@ collection.find({}, function(err, docs){
     }
 });
 
-// Make our db accessible to routers
-app.use(function(req,res,next){
- req.db = db;
- next();
-});
 
 
 var indexRouter = require('./routes/index');
@@ -44,6 +39,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// Make our db accessible to routers
+app.use(function(req,res,next){
+ req.db = db;
+ next();
+});
 
 
 
